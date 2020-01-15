@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:background="@drawable/layout_border"
-    >
+    android:background="@drawable/layout_border">
 
     <TextView
         android:id="@+id/image_name"
