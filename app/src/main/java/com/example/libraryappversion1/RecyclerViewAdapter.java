@@ -77,6 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Intent browser = new Intent(mContext, browserWebView.class);
                 browser.putExtra("url", mLinkUrls.get(position));
                 browser.putExtra("package", mPackages.get(position));
+                browser.putExtra("origin", "eContent");
                 mContext.startActivity(browser) ;
 
 

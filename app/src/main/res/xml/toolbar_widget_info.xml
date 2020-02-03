@@ -1,0 +1,8 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="400dp"
+    android:minHeight="60dp"
+    android:updatePeriodMillis="300"
+    android:initialLayout="@layout/toolbar_widget_layout"
+    android:resizeMode="horizontal"
+    android:previewImage="@drawable/logo">
+</appwidget-provider>

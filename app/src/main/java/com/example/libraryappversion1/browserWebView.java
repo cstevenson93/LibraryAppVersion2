@@ -1,11 +1,14 @@
 package com.example.libraryappversion1;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -13,6 +16,7 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public class browserWebView extends AppCompatActivity {
 
@@ -20,17 +24,22 @@ public class browserWebView extends AppCompatActivity {
     Uri uri;
     String appPackage;
     WebView myWebView;
+    ActionBar action;
 
 
 
 
     private void launchPage(View view){
         Bundle extras = getIntent().getExtras();
+        Intent goToMarket = null;
         url = extras.getString("url");
-        appPackage = extras.getString("package");
-        Intent goToMarket = new Intent(Intent.ACTION_VIEW,uri.parse("market://details?id="+appPackage));
-        //Toast.makeText(this, url, Toast.LENGTH_SHORT).show();
-        //Toast.makeText(this, appPackage, Toast.LENGTH_SHORT).show();
+
+        if(!url.equals("https://camden.bywatersolutions.com/")){
+            appPackage = extras.getString("package");
+            goToMarket = new Intent(Intent.ACTION_VIEW,uri.parse("market://details?id="+appPackage));
+        }
+
+
 
         if(url.equals("https://camden.bywatersolutions.com/")){
             myWebView.loadUrl(url);
@@ -44,17 +53,15 @@ public class browserWebView extends AppCompatActivity {
 
                 startActivity(goToMarket);
                 finish();
-                //setContentView(myWebView);
-                //myWebView.loadUrl(url);
-                //Toast.makeText(MainActivity.this, "There is no package available in android", Toast.LENGTH_LONG).show();
+
             }
 
 
         }
 
+    }
 
-
-
+    private void launchSearch(View view){
 
     }
 
@@ -63,57 +70,75 @@ public class browserWebView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final String javascriptUrlUser = "javascript: (function() {document.getElementById('userid').value= '50000005754949';}) ();";
-        final String javascriptUrlPass = "javascript: (function() {document.getElementById('password').value= '4949';}) ();";
-        final String javascriptUrlLogin ="javascript: (function() {document.getElementsByTagName('input')[9].click();}) ();";
+        final String origin = getIntent().getExtras().get("origin").toString();
 
+        Log.i("ORIGIN KEY:  ", origin);
 
-        //final String javascriptURL = "javascript:document.getElementById(\"userid\").value='5';";
+        //eContent Process
 
-
-
-
-        myWebView = new WebView(this);
-        //myWebView.getSettings().setJavaScriptEnabled(true);
-
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setDomStorageEnabled(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setDisplayZoomControls(false);
-        myWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        webSettings.setSupportZoom(true);
-        webSettings.setDefaultTextEncodingName("utf-8");
-
-        setContentView(myWebView);
-
-        launchPage(myWebView);
-
-        myWebView.setWebViewClient(new WebViewClient(){
+            final String javascriptUrlUser = "javascript: (function() {document.getElementById('userid').value= '50000005754949';}) ();";
+            final String javascriptUrlPass = "javascript: (function() {document.getElementById('password').value= '4949';}) ();";
+            final String javascriptUrlLogin = "javascript: (function() {document.getElementsByTagName('input')[9].click();}) ();";
 
 
 
 
-            @Override
 
-            public void onPageFinished(WebView view, String url) {
+            myWebView = new WebView(this);
+
+            WebSettings webSettings = myWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setDomStorageEnabled(true);
+            webSettings.setLoadWithOverviewMode(true);
+            webSettings.setUseWideViewPort(true);
+            webSettings.setBuiltInZoomControls(true);
+            webSettings.setDisplayZoomControls(false);
+            myWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            webSettings.setSupportZoom(true);
+            webSettings.setDefaultTextEncodingName("utf-8");
 
 
-                if(url.equals("https://camden.bywatersolutions.com/")) {
-                    //Toast.makeText(browserWebView.this, "Current Url: " + url, Toast.LENGTH_LONG).show();
-                    //myWebView.getSettings().setJavaScriptEnabled(true);
-                    view.loadUrl(javascriptUrlUser);
-                    view.loadUrl(javascriptUrlPass);
-                    view.loadUrl(javascriptUrlLogin);
+            setContentView(myWebView);
+
+            launchPage(myWebView);
+
+            myWebView.setWebViewClient(new WebViewClient() {
+
+
+                @Override
+
+                public void onPageFinished(WebView view, String url) {
+
+
+                    if (url.equals("https://camden.bywatersolutions.com/")) {
+                        //Toast.makeText(browserWebView.this, "Current Url: " + url, Toast.LENGTH_LONG).show();
+                        //myWebView.getSettings().setJavaScriptEnabled(true);
+                        view.loadUrl(javascriptUrlUser);
+                        view.loadUrl(javascriptUrlPass);
+                        view.loadUrl(javascriptUrlLogin);
+
+                        //Search Bar Process
+                        if (origin.equals("search")){
+                            final String javascriptSearch = "javascript: (function() {document.getElementById('translControl1').value= '" + getIntent().getExtras().get("ISBN").toString() + "';}) ();";
+                            final String javascriptSearchButton = "javascript: (function() {document.getElementsByTagName('button')[0].click();}) ();";
+
+
+
+
+
+                                    view.loadUrl(javascriptSearch);
+                                    view.loadUrl(javascriptSearchButton);
+
+
+
+
+
+                        }
+                    }
+
+
                 }
-
-
-
-
-            }
-        });
+            });
 
 
 
