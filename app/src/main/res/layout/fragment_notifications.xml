@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/menuHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_notifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/title_notifications"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/bellmawrMenu"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="132dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/layout_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bellmawrTextView"
+                    android:layout_width="256dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:shadowDx="-2"
+                    android:shadowDy="2"
+                    android:shadowRadius="50"
+                    android:text="@string/bellmawr_notifications"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorAccent" />
+
+                <ImageButton
+                    android:id="@+id/dropDownBellmawr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:onClick="click"
+                    app:srcCompat="@android:drawable/arrow_down_float" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/beLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/beBranchInfoHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/beSubscribe"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="97dp"
+                        android:layout_height="33dp"
+                        android:layout_marginTop="3dp"
+                        android:onClick="subscribe"
+                        android:text="@string/subscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toStartOf="@+id/beUnsubscribe"
+                        app:layout_constraintStart_toEndOf="@+id/beBranch"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/beUnsubscribe"
+                        android:layout_width="127dp"
+                        android:layout_height="35dp"
+                        android:onClick="unSubscribe"
+                        android:text="@string/unsubscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/beBranch"
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="All Branch Info"
+                        app:layout_constraintEnd_toStartOf="@+id/beSubscribe"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/beBranchChildHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/cdChildSubscribe"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="97dp"
+                        android:layout_height="33dp"
+                        android:onClick="subscribe"
+                        android:text="@string/subscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toStartOf="@+id/cdChildUnsubscribe"
+                        app:layout_constraintStart_toEndOf="@+id/cdChild"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/cdChildUnsubscribe"
+                        android:layout_width="127dp"
+                        android:layout_height="35dp"
+                        android:onClick="unSubscribe"
+                        android:text="@string/unsubscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/cdChild"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="BE Children's"
+                        app:layout_constraintEnd_toStartOf="@+id/cdChildSubscribe"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/camdenDowntownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/layout_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/camdenDowntownTextView"
+                    android:layout_width="256dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:shadowDx="-2"
+                    android:shadowDy="2"
+                    android:shadowRadius="50"
+                    android:text="@string/camden_downtown_notifications"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorAccent" />
+
+                <ImageButton
+                    android:id="@+id/dropDownCamdenDowntown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:onClick="click"
+                    app:srcCompat="@android:drawable/arrow_down_float" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:animateLayoutChanges="true"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cdBranchInfoHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/cdSubscribe"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="97dp"
+                        android:layout_height="33dp"
+                        android:layout_marginTop="3dp"
+                        android:onClick="subscribe"
+                        android:text="@string/subscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toStartOf="@+id/cdUnsubscribe"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/cdUnsubscribe"
+                        android:layout_width="127dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:onClick="unSubscribe"
+                        android:text="@string/unsubscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/cdBranch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="All Branch Info"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cdBranchChildHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/beChildSubscribe"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="97dp"
+                        android:layout_height="33dp"
+                        android:layout_marginTop="3dp"
+                        android:onClick="subscribe"
+                        android:text="@string/subscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toStartOf="@+id/beChildUnsubscribe"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/beChildUnsubscribe"
+                        android:layout_width="127dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:onClick="unSubscribe"
+                        android:text="@string/unsubscribe"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/beChild"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="BE Children's"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gtLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/gtUnsubscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="136dp"
+                    android:onClick="unSubscribe"
+                    android:text="@string/unsubscribe" />
+
+                <Button
+                    android:id="@+id/gtSubscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="92dp"
+                    android:onClick="subscribe"
+                    android:text="@string/subscribe" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/scLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/scUnsubscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="24dp"
+                    android:onClick="unSubscribe"
+                    android:text="@string/unsubscribe" />
+
+                <Button
+                    android:id="@+id/scSubscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="144dp"
+                    android:onClick="subscribe"
+                    android:text="@string/subscribe" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

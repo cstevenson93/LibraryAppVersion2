@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">LibraryAppVersion1</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_eContent">eContent</string>
+    <string name="toolbar_image">ActionBar Image</string>
+    <string name="voorhees_notifications">Voorhees Branch</string>
+    <string name="gloucester_township_notifications">Gloucester Twp. Branch</string>
+    <string name="south_county_notifications">South County Branch</string>
+    <string name="bellmawr_notifications">Bellmawr Branch</string>
+    <string name="camden_downtown_notifications">Camden Downtown Branch</string>
+    <string name="camden_ferry_notifications">Camden Ferry Ave. Branch</string>
+    <string name="haddon_township_notifications">Haddon Twp. Branch</string>
+    <string name="merchantville_notifications">Merchantville Branch</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="unsubscribe">Unsubscribe</string>
+</resources>
