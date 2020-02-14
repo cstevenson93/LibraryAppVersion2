@@ -636,6 +636,8 @@
                 android:id="@+id/scLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@android:drawable/dialog_holo_light_frame"
                 android:orientation="vertical"
                 android:visibility="gone">
@@ -771,6 +773,8 @@
                 android:id="@+id/htLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@android:drawable/dialog_holo_light_frame"
                 android:orientation="vertical"
                 android:visibility="gone">
@@ -906,6 +910,8 @@
                 android:id="@+id/meLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@android:drawable/dialog_holo_light_frame"
                 android:orientation="vertical"
                 android:visibility="gone">
@@ -1041,6 +1047,8 @@
                 android:id="@+id/vtLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@android:drawable/dialog_holo_light_frame"
                 android:orientation="vertical"
                 android:visibility="gone">
