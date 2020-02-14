@@ -320,11 +320,12 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
-        ConstraintLayout mainLayout = (ConstraintLayout) findViewById(R.id.parentLayout);
+        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.container);
 
-        //LinearLayout mainLayout = (LinearLayout) findViewById(R.id.mainLayout);
+        LinearLayout menuLayout = (LinearLayout) findViewById(R.id.menuLayout);
+        LinearLayout mainLayout = (LinearLayout) findViewById(R.id.mainLayout);
 
-        xTranslation = mainLayout.getTranslationX();
+        xTranslation = container.getTranslationX();
 
 
 
@@ -333,11 +334,11 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         if(xTranslation == 0.0){
-            mainLayout.animate().translationXBy(-750);
+            container.animate().translationXBy(-750);
         }
 
         if(xTranslation == -750.0){
-            mainLayout.animate().translationXBy(750);
+            container.animate().translationXBy(750);
         }
 
 

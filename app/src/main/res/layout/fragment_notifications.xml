@@ -42,7 +42,7 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:background="@drawable/layout_border"
@@ -50,17 +50,8 @@
 
                 <TextView
                     android:id="@+id/bellmawrTextView"
-                    android:layout_width="256dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
-                    android:shadowDx="-2"
-                    android:shadowDy="2"
-                    android:shadowRadius="50"
                     android:text="@string/bellmawr_notifications"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorAccent" />
+                    style="@style/textStyle" />
 
                 <ImageButton
                     android:id="@+id/dropDownBellmawr"
