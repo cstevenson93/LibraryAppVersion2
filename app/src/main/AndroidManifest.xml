@@ -53,6 +53,8 @@
             </intent-filter>
         </service>
 
+
+
         <receiver android:name=".toolbar_widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -64,7 +66,8 @@
         </receiver>
 
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
-            android:value="barcode"></meta-data>
+            android:value="barcode"/>
+
 
     </application>
 

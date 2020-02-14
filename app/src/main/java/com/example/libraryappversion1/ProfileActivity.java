@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -30,6 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     protected final static String NODE_USERS = "users";
+    private boolean menuOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         ActionBar action = getSupportActionBar();
+
+        action.setDisplayShowTitleEnabled(false);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -121,18 +126,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         Toast.makeText(this,getResources().getResourceEntryName(view.getId()) , Toast.LENGTH_LONG).show();
 
-        if(getResources().getResourceEntryName(view.getId()).equals("vtSubscribe")){
-            subscribeButton("vt");
-        }
-
-        if(getResources().getResourceEntryName(view.getId()).equals("gtSubscribe")){
-            subscribeButton("gt");
-        }
-
-        if(getResources().getResourceEntryName(view.getId()).equals("scSubscribe")){
-            subscribeButton("sc");
-        }
-
+        //Bellmawr
         if(getResources().getResourceEntryName(view.getId()).equals("beSubscribe")){
             subscribeButton("be");
         }
@@ -140,22 +134,74 @@ public class ProfileActivity extends AppCompatActivity {
         if(getResources().getResourceEntryName(view.getId()).equals("beChildSubscribe")){
             subscribeButton("beChild");
         }
+
+        //Camden Downtown (Rutgers)
+        if(getResources().getResourceEntryName(view.getId()).equals("cdSubscribe")){
+            subscribeButton("cd");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("cdChildSubscribe")){
+            subscribeButton("cdChild");
+        }
+
+        //Camden Ferry
+        if(getResources().getResourceEntryName(view.getId()).equals("cfSubscribe")){
+            subscribeButton("cf");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("cfChildSubscribe")){
+            subscribeButton("cfChild");
+        }
+
+        //Gloucester Township
+        if(getResources().getResourceEntryName(view.getId()).equals("gtSubscribe")){
+            subscribeButton("gt");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("gtChildSubscribe")){
+            subscribeButton("gtChild");
+        }
+
+        //South County
+        if(getResources().getResourceEntryName(view.getId()).equals("scSubscribe")){
+            subscribeButton("sc");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("scChildSubscribe")){
+            subscribeButton("scChild");
+        }
+
+        //Haddon Township
+        if(getResources().getResourceEntryName(view.getId()).equals("htSubscribe")){
+            subscribeButton("ht");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("htChildSubscribe")){
+            subscribeButton("htChild");
+        }
+
+        //Merchantville
+        if(getResources().getResourceEntryName(view.getId()).equals("meSubscribe")){
+            subscribeButton("me");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("meChildSubscribe")){
+            subscribeButton("meChild");
+        }
+
+        //Voorhees
+        if(getResources().getResourceEntryName(view.getId()).equals("vtSubscribe")){
+            subscribeButton("vt");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("vtChildSubscribe")){
+            subscribeButton("vtChild");
+        }
     }
 
     public void unSubscribe(View view){
 
-        if(getResources().getResourceEntryName(view.getId()).equals("vtUnsubscribe")){
-            unsubscribeButton("vt");
-        }
-
-        if(getResources().getResourceEntryName(view.getId()).equals("gtUnsubscribe")){
-            unsubscribeButton("gt");
-        }
-
-        if(getResources().getResourceEntryName(view.getId()).equals("scUnsubscribe")){
-            unsubscribeButton("sc");
-        }
-
+        //Bellmawr
         if(getResources().getResourceEntryName(view.getId()).equals("beUnsubscribe")){
             unsubscribeButton("be");
         }
@@ -163,6 +209,77 @@ public class ProfileActivity extends AppCompatActivity {
         if(getResources().getResourceEntryName(view.getId()).equals("beChildUnsubscribe")){
             unsubscribeButton("beChild");
         }
+
+        //Camden Downtown (Rutgers)
+        if(getResources().getResourceEntryName(view.getId()).equals("cdUnsubscribe")){
+            unsubscribeButton("cd");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("cdChildUnsubscribe")){
+            unsubscribeButton("cdChild");
+        }
+
+        //Camden Ferry
+        if(getResources().getResourceEntryName(view.getId()).equals("cfUnsubscribe")){
+            unsubscribeButton("cf");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("cfChildUnsubscribe")){
+            unsubscribeButton("cfChild");
+        }
+
+        //Gloucester Township
+        if(getResources().getResourceEntryName(view.getId()).equals("gtUnsubscribe")){
+            unsubscribeButton("gt");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("gtChildUnsubscribe")){
+            unsubscribeButton("gtChild");
+        }
+
+        //South County
+        if(getResources().getResourceEntryName(view.getId()).equals("scUnsubscribe")){
+            unsubscribeButton("sc");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("scChildUnsubscribe")){
+            unsubscribeButton("scChild");
+        }
+
+        //Haddon Township
+        if(getResources().getResourceEntryName(view.getId()).equals("htUnsubscribe")){
+            unsubscribeButton("ht");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("htChildUnsubscribe")){
+            unsubscribeButton("htChild");
+        }
+
+        //Merchantville
+        if(getResources().getResourceEntryName(view.getId()).equals("meUnsubscribe")){
+            unsubscribeButton("me");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("meChildUnsubscribe")){
+            unsubscribeButton("meChild");
+        }
+
+        //Voorhees
+        if(getResources().getResourceEntryName(view.getId()).equals("vtUnsubscribe")){
+            unsubscribeButton("vt");
+        }
+
+        if(getResources().getResourceEntryName(view.getId()).equals("vtChildUnsubscribe")){
+            unsubscribeButton("vtChild");
+        }
+
+
+
+
+
+
+
+        //
     }
 
     public void subscribeButton(String branch){
@@ -193,6 +310,40 @@ public class ProfileActivity extends AppCompatActivity {
                         Toast.makeText(ProfileActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    public void openMenu(View view){
+
+        Log.i("Menu Button Status: ", "Button Pressed");
+
+        float xTranslation;
+
+
+
+        ConstraintLayout mainLayout = (ConstraintLayout) findViewById(R.id.parentLayout);
+
+        //LinearLayout mainLayout = (LinearLayout) findViewById(R.id.mainLayout);
+
+        xTranslation = mainLayout.getTranslationX();
+
+
+
+
+
+
+
+        if(xTranslation == 0.0){
+            mainLayout.animate().translationXBy(-750);
+        }
+
+        if(xTranslation == -750.0){
+            mainLayout.animate().translationXBy(750);
+        }
+
+
+
+
+
     }
 
 

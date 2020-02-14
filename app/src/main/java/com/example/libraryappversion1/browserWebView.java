@@ -8,11 +8,13 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -42,6 +44,8 @@ public class browserWebView extends AppCompatActivity {
 
 
         if(url.equals("https://camden.bywatersolutions.com/")){
+
+            //setContentView(myWebView);
             myWebView.loadUrl(url);
         } else {
 
@@ -68,7 +72,12 @@ public class browserWebView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_browser);
 
         final String origin = getIntent().getExtras().get("origin").toString();
 
@@ -84,7 +93,10 @@ public class browserWebView extends AppCompatActivity {
 
 
 
-            myWebView = new WebView(this);
+
+            myWebView = (WebView) findViewById(R.id.catWebView);
+
+
 
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
@@ -98,19 +110,24 @@ public class browserWebView extends AppCompatActivity {
             webSettings.setDefaultTextEncodingName("utf-8");
 
 
-            setContentView(myWebView);
+
 
             launchPage(myWebView);
 
             myWebView.setWebViewClient(new WebViewClient() {
 
 
+
+
+
                 @Override
 
                 public void onPageFinished(WebView view, String url) {
 
+                    Log.i("Current URL: ", url);
 
-                    if (url.equals("https://camden.bywatersolutions.com/")) {
+
+                    if (url.contains("https://camden.bywatersolutions.com/")) {
                         //Toast.makeText(browserWebView.this, "Current Url: " + url, Toast.LENGTH_LONG).show();
                         //myWebView.getSettings().setJavaScriptEnabled(true);
                         view.loadUrl(javascriptUrlUser);
@@ -134,10 +151,31 @@ public class browserWebView extends AppCompatActivity {
 
 
                         }
+
+
                     }
 
 
+
+
+
+
                 }
+
+                @Override
+                public void onPageCommitVisible (WebView view, String url){
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ProgressBar progressBar = (ProgressBar) findViewById(R.id.catProgressBar);
+
+                            myWebView.setVisibility(View.VISIBLE);
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }, 3500);
+                }
+
             });
 
 
