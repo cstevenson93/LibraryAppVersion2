@@ -22,6 +22,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -320,12 +321,17 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.container);
+        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.frontLayout);
+        View navHost =  findViewById(R.id.nav_host_fragment);
 
         LinearLayout menuLayout = (LinearLayout) findViewById(R.id.menuLayout);
         LinearLayout mainLayout = (LinearLayout) findViewById(R.id.mainLayout);
 
-        xTranslation = container.getTranslationX();
+        //xTranslation = container.getTranslationX();
+
+        xTranslation = menuLayout.getTranslationX();
+
+
 
 
 
@@ -334,11 +340,17 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         if(xTranslation == 0.0){
-            container.animate().translationXBy(-750);
+
+           menuLayout.animate().translationXBy(-750);
+
+            //container.animate().translationXBy(-750);
         }
 
         if(xTranslation == -750.0){
-            container.animate().translationXBy(750);
+
+            menuLayout.animate().translationXBy(750);
+
+            //container.animate().translationXBy(750);
         }
 
 
