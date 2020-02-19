@@ -71,15 +71,6 @@
             android:layout_height="match_parent"
             android:background="?attr/colorButtonNormal">
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/nav_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/windowBackground"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:menu="@menu/bottom_nav_menu" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/frontLayout"
                 android:layout_width="match_parent"
@@ -96,87 +87,98 @@
                     app:defaultNavHost="true"
                     app:navGraph="@navigation/mobile_navigation" />
 
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/nav_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/windowBackground"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:menu="@menu/bottom_nav_menu" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/menuLayout"
-                android:layout_width="750px"
-                android:layout_height="match_parent"
-                android:background="@android:drawable/screen_background_dark_transparent"
-                android:gravity="right"
-                android:orientation="vertical"
-                android:visibility="visible"
-                app:layout_constraintStart_toEndOf="@id/frontLayout"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <Button
-                    android:id="@+id/signOut"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="left|center_vertical"
-                    android:onClick="signOut"
-                    android:text="  Sign Out"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/signOut2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="left|center_vertical"
-                    android:onClick="signOut"
-                    android:text="  Sign Out"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/signOut8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="left|center_vertical"
-                    android:onClick="signOut"
-                    android:text="  Sign Out"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/signOut9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="left|center_vertical"
-                    android:onClick="signOut"
-                    android:text="  Sign Out"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/signOut10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="left|center_vertical"
-                    android:onClick="signOut"
-                    android:text="  Sign Out"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="750px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@android:drawable/screen_background_dark_transparent"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/mainLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/signOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="left|center_vertical"
+            android:onClick="signOut"
+            android:text="  Sign Out"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/accountSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="left|center_vertical"
+            android:onClick="signOut"
+            android:text="  Account Summary"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/signOut8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="left|center_vertical"
+            android:onClick="signOut"
+            android:text="  Sign Out"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/signOut9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="left|center_vertical"
+            android:onClick="signOut"
+            android:text="  Sign Out"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/signOut10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="left|center_vertical"
+            android:onClick="signOut"
+            android:text="  Sign Out"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

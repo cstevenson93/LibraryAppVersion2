@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -324,7 +325,7 @@ public class ProfileActivity extends AppCompatActivity {
         ConstraintLayout container = (ConstraintLayout) findViewById(R.id.frontLayout);
         View navHost =  findViewById(R.id.nav_host_fragment);
 
-        LinearLayout menuLayout = (LinearLayout) findViewById(R.id.menuLayout);
+        final LinearLayout menuLayout = (LinearLayout) findViewById(R.id.menuLayout);
         LinearLayout mainLayout = (LinearLayout) findViewById(R.id.mainLayout);
 
         //xTranslation = container.getTranslationX();
@@ -341,6 +342,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         if(xTranslation == 0.0){
 
+            menuLayout.setVisibility(View.VISIBLE);
            menuLayout.animate().translationXBy(-750);
 
             //container.animate().translationXBy(-750);
@@ -348,7 +350,13 @@ public class ProfileActivity extends AppCompatActivity {
 
         if(xTranslation == -750.0){
 
-            menuLayout.animate().translationXBy(750);
+            menuLayout.animate().translationXBy(750).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    menuLayout.setVisibility(View.GONE);
+                }
+            }).start();
+
 
             //container.animate().translationXBy(750);
         }
