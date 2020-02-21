@@ -1,60 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/eventsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="149dp"
-                android:layout_centerInParent="true"
-                android:background="@drawable/layout_border"
-                android:drawableTop="@drawable/ic_event_white"
-                android:drawablePadding="-30dip"
-                android:includeFontPadding="true"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:paddingBottom="10dp"
-                android:text="Events"
-                android:textAllCaps="false"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/rowOne"
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/myAccountButton"
-                android:layout_width="wrap_content"
-                android:layout_height="149dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
                 android:background="@drawable/layout_border"
                 android:drawableTop="@drawable/ic_account_white"
                 android:drawablePadding="-30dip"
@@ -62,26 +37,54 @@
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:paddingBottom="10dp"
+                android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                android:shadowDx="-2"
+                android:shadowDy="2"
+                android:shadowRadius="50"
                 android:text="My Account"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textColor="@color/colorAccent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1">
+            <Button
+                android:id="@+id/eventsButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_weight="3"
+                android:background="@drawable/layout_border"
+                android:drawableTop="@drawable/ic_event_white"
+                android:drawablePadding="-30dip"
+                android:includeFontPadding="true"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingBottom="10dp"
+                android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                android:shadowDx="-2"
+                android:shadowDy="2"
+                android:shadowRadius="50"
+                android:text="Events"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rowTwo"
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/locationsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="149dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
+                android:layout_marginRight="4dp"
+                android:layout_weight="2"
                 android:background="@drawable/layout_border"
                 android:drawableTop="@drawable/ic_library_white"
                 android:drawablePadding="-30dip"
@@ -89,13 +92,36 @@
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:paddingBottom="10dp"
+                android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                android:shadowDx="-2"
+                android:shadowDy="2"
+                android:shadowRadius="50"
                 android:text="Locations"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textColor="@color/colorAccent" />
+
+            <Button
+                android:id="@+id/meetingRoomsButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:background="@drawable/layout_border"
+                android:drawableTop="@drawable/meeting_room_black"
+                android:drawablePadding="-30dip"
+                android:includeFontPadding="true"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingBottom="5dp"
+                android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                android:shadowDx="-2"
+                android:shadowDy="2"
+                android:shadowRadius="50"
+                android:text="Meetings Rooms"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

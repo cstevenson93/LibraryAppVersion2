@@ -69,13 +69,13 @@
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/colorButtonNormal">
+            android:background="@color/colorPrimary">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/frontLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?attr/colorButtonNormal"
+                android:background="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -105,12 +105,14 @@
     <LinearLayout
         android:id="@+id/menuLayout"
         android:layout_width="750px"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="56dp"
+        android:layout_marginBottom="58dp"
         android:background="@android:drawable/screen_background_dark_transparent"
         android:gravity="right"
         android:orientation="vertical"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/mainLayout"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -171,7 +173,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
-            android:layout_marginBottom="4dp"
             android:background="@color/colorPrimaryDark"
             android:gravity="left|center_vertical"
             android:onClick="signOut"
@@ -179,6 +180,14 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@color/colorAccent"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorPrimaryDark" />
 
     </LinearLayout>
 

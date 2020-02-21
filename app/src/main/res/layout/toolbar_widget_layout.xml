@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="PrivateResource"
     android:id="@+id/widgetLayout"
     android:layout_width="match_parent"
     android:layout_height="60dp"
@@ -30,7 +31,7 @@
         android:enabled="true"
         android:onClick="onClick"
         android:text="Search Catalog"
-        android:textColor="@android:color/darker_gray">
+        android:textColor="@color/textview_click_color">
 
 
     </TextView>

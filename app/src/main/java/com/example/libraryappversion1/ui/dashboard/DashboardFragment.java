@@ -1,5 +1,6 @@
 package com.example.libraryappversion1.ui.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,16 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.libraryappversion1.MainActivity;
 import com.example.libraryappversion1.R;
+import com.example.libraryappversion1.searchActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
     ActionBar action;
+    FloatingActionButton search;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,6 +42,19 @@ public class DashboardFragment extends Fragment {
         action = ((AppCompatActivity)getActivity()).getSupportActionBar();
 
         action.setTitle("Dashboard"); //sets actionBar title to Dashboard
+
+        search = (FloatingActionButton) root.findViewById(R.id.floatingSearchButton);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), searchActivity.class));
+            }
+        });
+
+
         return root;
     }
+
+
 }

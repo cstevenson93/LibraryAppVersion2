@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
     android:layout_marginTop="5dp"
+    android:layout_marginRight="16dp"
     android:background="@drawable/layout_border"
     android:paddingBottom="8dp">
 
@@ -17,9 +18,14 @@
         android:layout_marginStart="14dp"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="39dp"
+        android:paddingLeft="3dp"
+        android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+        android:shadowDx="-2"
+        android:shadowDy="2"
+        android:shadowRadius="50"
         android:text="Canada"
         android:textColor="#cee0e2"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toTopOf="parent" />
 

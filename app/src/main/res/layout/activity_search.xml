@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="com.example.libraryappversion1.searchActivity">
 
 
@@ -11,10 +12,15 @@
         android:id="@+id/categoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="172dp"
+        android:background="@drawable/layout_border"
         android:onClick="onClick"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:text="Search By Keyword"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/isbnLayout" />
 
@@ -28,13 +34,16 @@
 
         <Button
             android:id="@+id/searchButton"
-            android:layout_width="167dp"
-            android:layout_height="55dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/numField"
             android:layout_marginTop="89dp"
+            android:background="@drawable/layout_border"
             android:onClick="searchButton"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
             android:text="@android:string/search_go"
-            android:textColor="@android:color/tertiary_text_light"
+            android:textColor="@color/colorAccent"
             android:textSize="19.5sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="106dp"
             android:hint="ISBN"
+            android:textColorHint="@color/colorAccent"
+            app:backgroundTint="@color/colorAccent"
             app:layout_constraintEnd_toStartOf="@+id/scanButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -58,7 +69,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="105dp"
             android:layout_weight="1"
+            android:background="@drawable/layout_border"
             android:onClick="openScanner"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_camera" />
